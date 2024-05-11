@@ -27,54 +27,74 @@
 				<div class="row justify-content-md-center">
 					<div class="card-wrapper col-12 col-md-4 mt-5">
 						<div class="brand text-center mb-3">
-							<a href="/"><img src="{% static 'public/img/logo.png' %}"></a>
+							<h2>CIMS</h2>
 						</div>
+						{% if messages %}
+							{% for message in messages %}
+								{% if message.tags == 'error' %}
+								<div class="alert alert-warning alert-left-bordered border-warning alert-dismissible d-flex align-items-center p-md-4 mb-2 fade show" 		role="alert">
+									<i class="gd-flag-alt-2 icon-text text-warning mr-2"></i>
+										<p class="mb-0">
+											<strong>{{ message }}</strong> 
+										</p>
+									<button type="button" class="close" aria-label="Close" data-dismiss="alert">
+									<i class="gd-close icon-text icon-text-xs" aria-hidden="true"></i>
+									</button>
+								</div>
+								{% endif %}
+								{% if message.tags == 'success' %}
+								<div class="alert alert-success alert-left-bordered border-success alert-dismissible d-flex align-items-center p-md-4 mb-2 fade show" role="alert">
+									<i class="gd-check-box icon-text text-success mr-2"></i>
+									<p class="mb-0">
+									  <strong>{{ message }}</strong>
+									</p>
+									<button type="button" class="close" aria-label="Close" data-dismiss="alert">
+									  <i class="gd-close icon-text icon-text-xs" aria-hidden="true"></i>
+									</button>
+								  </div>
+								{% endif %}
+							{% endfor %}
+						{% endif %}
 						<div class="card">
 							<div class="card-body">
 								<h4 class="card-title">Login</h4>
-								<form>
+								<form method="post">
+									{% csrf_token %}
 									<div class="form-group">
-										<label for="email">E-Mail Address</label>
-										<input id="email" type="email" class="form-control" name="username" required="" autofocus="">
+										<label for="email">Username</label>
+										<input id="email" type="text" class="form-control" name="username" required="" autofocus="">
 									</div>
 
 									<div class="form-group">
 										<label for="password">Password
 										</label>
 										<input id="password" type="password" class="form-control" name="password" required="">
-										<div class="text-right">
+										<!-- <div class="text-right">
 											<a href="password-reset.html" class="small">
 												Forgot Your Password?
 											</a>
-										</div>
+										</div> -->
 									</div>
 
 									<div class="form-group">
 										<div class="form-check position-relative mb-2">
-										  <input type="checkbox" class="form-check-input d-none" id="remember" name="remember">
+										  <input type="checkbox" class="form-check-input d-none" id="remember" name="remember" required>
 										  <label class="checkbox checkbox-xxs form-check-label ml-1" for="remember"
-												 data-icon="&#xe936">Remember Me</label>
+												 data-icon="&#xe936">Agree to our <a href="">Terms and Conditions</a></label>
 										</div>
 									</div>
 
 									<div class="form-group no-margin">
-										<a href="/index.html" class="btn btn-primary btn-block">
+										<button type="submit" class="btn btn-primary btn-block">
 											Sign In
-										</a>
+										</button>
 									</div>
 									<div class="text-center mt-3 small">
-										Don't have an account? <a href="register.html">Sign Up</a>
+										Don't have an account? <a href="{% url 'register' %}">Sign Up</a>
 									</div>
 								</form>
 							</div>
 						</div>
-						<footer class="footer mt-3">
-							<div class="container-fluid">
-								<div class="footer-content text-center small">
-									<span class="text-muted">&copy; 2019 Graindashboard. All Rights Reserved.</span>
-								</div>
-							</div>
-						</footer>
 					</div>
 				</div>
 

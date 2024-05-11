@@ -1,0 +1,110 @@
+{% extends 'tracker/base.html' %} 
+
+{% block title %} 
+
+CIMS - Appication Process
+
+{% endblock %} 
+
+
+{% block content %} 
+
+<div class="content">
+    <div class="py-4 px-3 px-md-4">
+        <div class="mb-3 mb-md-4 d-flex justify-content-between">
+            <div class="h3 mb-0">Application Process</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-xl-4 mb-3 mb-xl-4"></div>
+            <div class="col-md-4 col-xl-4 mb-3 mb-xl-4">
+                <style>
+                    ol li {
+                        font-size: 20px;
+                    }
+                </style>
+                <ol>
+                    <li>
+                        Attend the PRACTICUM ORIENTATION
+                    </li>
+                    <li>
+                        Accoumplish the Following
+                        <ol>
+                            <li>SWEP Application Form</li>
+                            <li>Notarize Waiver</li>
+                            <li>Notarize Practicum Rules and Regulation</li>
+                            <li>Resume</li>
+                        </ol>
+                    </li>
+        
+                    <li>Request and Secure computerize grade evaluation from the registrar</li>
+                    <li>Enrollment of OJT/ Practicum</li>
+                    <li>Medical Clearance (Proceed to University Clinic)</li>
+                </ol>
+                
+                {% if step1 %}
+                <hr>
+                <p>Application Submitted</p>
+                    {% if step1.swep %}
+                        <p>SWEP Application Form: <a href="{{step1.swep.url}}" target="_blank">View Here</a></p>
+                    {% endif %}
+                    {% if step1.notarizewaiver %}
+                        <p>Notarize Waiver: <a href="{{step1.notarizewaiver.url}}" target="_blank">View Here</a></p>
+                    {% endif %}
+                    {% if step1.notarizepracticum %}
+                        <p>Notarize Practicum Rules and Regulation: <a href="{{ step1.notarizepracticum.url }}" target="_blank">View Here</a></p>
+                    {% endif %}
+                    {% if step1.resume %}
+                        <p>Resume: <a href="{{ step1.resume.url }}" target="_blank">View Here</a></p>
+                    {% endif %}
+                    {% if step1.transcript %}
+                        <p>Grade Evaluation: <a href="{{ step1.transcript.url }}" target="_blank">View Here</a></p>
+                    {% endif %}
+                    {% if step1.medical %}
+                        <p>Medical Clearance: <a href="{{ step1.medical.url }}" target="_blank">View Here</a></p>
+                    {% endif %}
+                {% endif %}
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <hr>
+                    <p>Only Accepts PDF and Image</p>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">SWEP Application Form</label>
+                            <input type="file" class="form-control-file" name="swep" id="exampleFormControlFile1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Notarize Waiver</label>
+                            <input type="file" class="form-control-file"  name="notarizewaiver" id="exampleFormControlFile1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Notarize Practicum Rules and Regulation</label>
+                            <input type="file" class="form-control-file" name="notarizepracticum" id="exampleFormControlFile1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Resume</label>
+                            <input type="file" class="form-control-file"  name="resume" id="exampleFormControlFile1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Grade Evaluation</label>
+                            <input type="file" class="form-control-file"  name="transcript" id="exampleFormControlFile1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Medical Clearance</label>
+                            <input type="file" class="form-control-file"  name="medical" id="exampleFormControlFile1">
+                        </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-4 col-xl-4 mb-3 mb-xl-4"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %} 

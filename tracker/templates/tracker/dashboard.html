@@ -1,0 +1,135 @@
+{% extends 'tracker/base.html' %} 
+
+{% block title %} 
+
+CIMS - Dashboard
+
+{% endblock %} 
+
+
+{% block content %} 
+
+<div class="content">
+    <div class="py-4 px-3 px-md-4">
+
+        <div class="mb-3 mb-md-4 d-flex justify-content-between">
+            <div class="h3 mb-0">Dashboard</div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-xl-4 mb-3 mb-xl-4">
+                <!-- Widget -->
+                <div class="card flex-row align-items-center p-3 p-md-4">
+                    <div class="icon icon-lg bg-soft-primary rounded-circle mr-3">
+                        <i class="gd-check icon-text d-inline-block text-primary"></i>
+                    </div>
+                    <div>
+                        <a href="{% url 'step1' %}">
+                            <h4 class="lh-1 mb-1">Application Process</h4>
+                            <h6 class="mb-0">Step 1</h6>
+                        </a>
+                    </div>
+                    <i class="gd-alert icon-text d-flex text-danger ml-auto"></i>
+                </div>
+                <!-- End Widget -->
+            </div>
+            <div class="col-md-6 col-xl-4 mb-3 mb-xl-4">
+                <!-- Widget -->
+                <div class="card flex-row align-items-center p-3 p-md-4">
+                    <div class="icon icon-lg bg-soft-primary rounded-circle mr-3">
+                        <i class="gd-comment icon-text d-inline-block text-primary"></i>
+                    </div>
+                    <div>
+                        <a href="{% url 'step2' %}">
+                            <h4 class="lh-1 mb-1">Placement Requirements</h4>
+                            <h6 class="mb-0">Step 2</h6>
+                        </a>
+                    </div>
+                    <i class="gd-alert icon-text d-flex text-danger ml-auto"></i>
+                </div>
+                <!-- End Widget -->
+            </div>
+            <div class="col-md-6 col-xl-4 mb-3 mb-xl-4">
+                <!-- Widget -->
+                <div class="card flex-row align-items-center p-3 p-md-4">
+                    <div class="icon icon-lg bg-soft-primary rounded-circle mr-3">
+                        <i class="gd-envelope icon-text d-inline-block text-primary"></i>
+                    </div>
+                    <div>
+                        <a href="{% url 'step3' %}">
+                            <h4 class="lh-1 mb-1">Placement</h4>
+                            <h6 class="mb-0">Step 3</h6>
+                        </a>
+                    </div>
+                    <i class="gd-alert icon-text d-flex text-danger ml-auto"></i>
+                </div>
+                <!-- End Widget -->
+            </div>
+            <div class="col-md-6 col-xl-4 mb-3 mb-xl-4">
+                <!-- Widget -->
+                <div class="card flex-row align-items-center p-3 p-md-4">
+                    <div class="icon icon-lg bg-soft-primary rounded-circle mr-3">
+                        <i class="gd-layout-media-overlay icon-text d-inline-block text-primary"></i>
+                    </div>
+                    <div>
+                        <a href="{% url 'step4' %}">
+                            <h4 class="lh-1 mb-1">Training Proper</h4>
+                            <h6 class="mb-0">Step 4</h6>
+                        </a>
+                    </div>
+                    <i class="gd-alert icon-text d-flex text-danger ml-auto"></i>
+                </div>
+                <!-- End Widget -->
+            </div>
+            <div class="col-md-6 col-xl-4 mb-3 mb-xl-4">
+                <!-- Widget -->
+                <div class="card flex-row align-items-center p-3 p-md-4">
+                    <div class="icon icon-lg bg-soft-primary rounded-circle mr-3">
+                        <i class="gd-file icon-text d-inline-block text-primary"></i>
+                    </div>
+                    <div>
+                        <a href="{% url 'step5' %}">
+                            <h4 class="lh-1 mb-1">Final Requirements</h4>
+                            <h6 class="mb-0">Step 5</h6>
+                        </a>
+                    </div>
+                    <i class="gd-alert icon-text d-flex text-danger ml-auto"></i>
+                    <!-- <i class="gd-arrow-up icon-text d-flex text-success ml-auto"></i> -->
+                </div>
+                <!-- End Widget -->
+            </div>
+            
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <!-- <footer class="small p-3 px-md-4 mt-auto">
+        <div class="row justify-content-between">
+            <div class="col-lg text-center text-lg-left mb-3 mb-lg-0">
+                <ul class="list-dot list-inline mb-0">
+                    <li class="list-dot-item list-dot-item-not list-inline-item mr-lg-2"><a class="link-dark" href="#">FAQ</a></li>
+                    <li class="list-dot-item list-inline-item mr-lg-2"><a class="link-dark" href="#">Support</a></li>
+                    <li class="list-dot-item list-inline-item mr-lg-2"><a class="link-dark" href="#">Contact us</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg text-center mb-3 mb-lg-0">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item mx-2"><a class="link-muted" href="#"><i class="gd-twitter-alt"></i></a></li>
+                    <li class="list-inline-item mx-2"><a class="link-muted" href="#"><i class="gd-facebook"></i></a></li>
+                    <li class="list-inline-item mx-2"><a class="link-muted" href="#"><i class="gd-github"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg text-center text-lg-right">
+                &copy; 2019 Graindashboard. All Rights Reserved.
+            </div>
+        </div>
+    </footer> -->
+    <!-- End Footer -->
+</div>
+
+
+{% endblock %}

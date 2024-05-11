@@ -1,0 +1,79 @@
+{% extends 'tracker/base.html' %} 
+
+{% block title %} 
+
+CIMS - Placement Requirements
+
+{% endblock %} 
+
+
+{% block content %} 
+
+<div class="content">
+    <div class="py-4 px-3 px-md-4">
+        <div class="mb-3 mb-md-4 d-flex justify-content-between">
+            <div class="h3 mb-0">Placement Requirements</div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-xl-4 mb-3 mb-xl-4"></div>
+            <div class="col-md-4 col-xl-4 mb-3 mb-xl-4">
+                <style>
+                    ol li, ul li {
+                        font-size: 20px;
+                    }
+                </style>
+                <ul>
+                    <li>
+                        Accoumplish the Following
+                        <ol>
+                            <li>Company name and address</li>
+                            <li>Contact person and contact number</li>
+                            <li>Complete name and Position of the person whom the recommentation letter should be address</li>
+                        </ol>
+                    </li>
+                </ul>
+                
+                {% if step2 %}
+                <hr>
+                <h2>Company Details</h2>
+                    <p>Company Name: <strong>{{ step2.company_name }}</strong> </p>
+                    <p>Company Address:  <strong>{{ step2.company_address }}</strong></p>
+                    <p>Contact Person:  <strong>{{ step2.contact_person }}</strong></p>
+                    <p>Contact Person's Number:  <strong>{{ step2.contact_number }}</strong></p>
+                    <p>Recomentation Name:  <strong>{{ step2.recomentation_name }}</strong></p>
+                {% endif %}
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <hr>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Company Name</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Company Name" name="company_name" value="{{step2.company_name}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Company Address</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="company_address">{{ step2.company_address }}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Contact Person</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Contact Person" name="contact_person" value="{{ step2.contact_person }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Contact Person's Number</label>
+                        <input type="tel" class="form-control" id="exampleInputEmail1" placeholder="Contact Person's Number" name="contact_number" value="{{ step2.contact_number }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Name whom will be on Recommendation Letter</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" name="recomentation_name" value="{{ step2.recomentation_name }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-4 col-xl-4 mb-3 mb-xl-4"></div>
+
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %} 
