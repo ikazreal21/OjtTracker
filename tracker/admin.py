@@ -48,3 +48,8 @@ admin.site.register(Step2)
 # admin.site.register(Step5)
 
 
+admin.site.site_header = "CIMS Admin"
+admin.site.site_title = "CBA Internship Management System Admin Portal"
+admin.site.index_title = "Welcome to CBA Internship Management System Admin Portal"
+
+
