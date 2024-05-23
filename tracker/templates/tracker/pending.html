@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Title -->
+    <title>CIMS</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'public/img/favicon.ico' %}">
+
+    <!-- Template -->
+    <link rel="stylesheet" href="{% static 'public/graindashboard/css/graindashboard.css' %}">
+  </head>
+
+  <body class="">
+
+    <main class="main">
+
+      <div class="content">
+
+			<div class="container-fluid pb-5">
+
+				<div class="row justify-content-md-center">
+					<div class="card-wrapper col-12 col-md-4 mt-5">
+						<div class="brand text-center mb-3">
+							<h2>Pending</h2>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<h4 class="card-title" style="text-align: center;">Pending Account Waiting for Approval</h4>
+							</div>
+                            <a  class="btn btn-primary btn-block" href="{% url 'logout' %}">Logout</a>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+
+      </div>
+    </main>
+
+
+	<script src="{% static 'public/graindashboard/js/graindashboard.js' %}"></script>
+    <script src="{% static 'public/graindashboard/js/graindashboard.vendor.js' %}"></script>
+    
+  </body>
+</html>

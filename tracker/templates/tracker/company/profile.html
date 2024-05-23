@@ -1,0 +1,58 @@
+{% extends 'tracker/company/base.html' %} 
+
+{% block title %} 
+
+CIMS - Profile
+
+{% endblock %} 
+
+
+{% block content %} 
+
+<div class="container-fluid pb-5">
+    <div class="row justify-content-md-center">
+        <div class="card-wrapper col-12 col-md-12 mt-5">
+            <div class="brand text-center mb-3">
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Profile</h4>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                    <hr>
+                    <h1>Personal Info</h1>
+                    <div class="form-group">
+                        <label for="name">Compant Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required="" value="{{details.name}}" autofocus="">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Address</label>
+                        <textarea class="form-control" name="address" id="exampleFormControlTextarea1"  rows="3" required>{{details.address}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Contanct Person</label>
+                        <input type="text" class="form-control" id="name" name="contact_person" required="" value="{{details.contact_person}}" autofocus="">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Contanct Number</label>
+                        <input type="number" class="form-control" id="name" name="contact_number" required="" value="{{details.contact_number}}" autofocus="">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Recommendation Name</label>
+                        <input type="text" class="form-control" id="name" name="recommendation_name" required="" value="{{details.recommendation_name}}" autofocus="">
+                    </div>
+                    <div class="form-group no-margin">
+                        <button type="submit" class="btn btn-secondary btn-block">
+                            Update
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %} 

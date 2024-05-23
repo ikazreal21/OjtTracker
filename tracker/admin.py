@@ -11,10 +11,10 @@ class UserAdminConfig(UserAdmin):
     model = CustomUser
     search_fields = ('username', 'email')
     list_filter = ('first_name', 'is_active', 'is_staff', 'is_student')
-    list_display = ('username', 'id', 'email','is_active', 'is_staff', 'is_student')
+    list_display = ('username', 'id', 'email','is_active', 'is_staff', 'is_student', 'is_company')
     fieldsets = (
         (None, {'fields': ('username', 'email', 'password')}),
-        ('Permissions', {'fields': ('is_staff', 'is_active', 'is_student')}),
+        ('Permissions', {'fields': ('is_staff', 'is_active', 'is_student', 'is_company')}),
     )
     formfield_overrides = {
         models.TextField: {'widget': Textarea(attrs={'rows': 20, 'cols': 60})}
@@ -32,6 +32,7 @@ class UserAdminConfig(UserAdmin):
                     'is_active',
                     'is_staff',
                     'is_student',
+                    'is_company',
                 ),
             },
         ),
@@ -43,6 +44,7 @@ admin.site.register(CustomUser, UserAdminConfig)
 admin.site.register(Student)
 admin.site.register(Step1)
 admin.site.register(Step2)
+admin.site.register(Company)
 # admin.site.register(Step3)
 # admin.site.register(Step4)
 # admin.site.register(Step5)

@@ -5,7 +5,7 @@
     <!-- Title -->
     <title>      
         {% block title %} 
-            CBA Internship Management System
+            CBA Internship Management System | Company Dashboard
         {% endblock %}
     </title>
 
@@ -74,7 +74,7 @@
 
                     <ul id="profileMenu" class="unfold unfold-user unfold-light unfold-top unfold-centered position-absolute pt-2 pb-1 mt-4 unfold-css-animation unfold-hidden fadeOut" aria-labelledby="profileMenuInvoker" style="animation-duration: 300ms;">
                         <li class="unfold-item">
-                            <a class="unfold-link d-flex align-items-center text-nowrap" href="{% url 'profile' %}">
+                            <a class="unfold-link d-flex align-items-center text-nowrap" href="{% url 'company-profile' %}">
                     <span class="unfold-item-icon mr-3">
                       <i class="gd-user"></i>
                     </span>
@@ -103,61 +103,45 @@
     <aside id="sidebar" class="js-custom-scroll side-nav">
         <ul id="sideNav" class="side-nav-menu side-nav-menu-top-level mb-0">
             <!-- Title -->
-            <li class="sidebar-heading h6">Dashboard</li>
+            <li class="sidebar-heading h6">Company Dashboard</li>
             <!-- End Title -->
 
             <!-- Dashboard -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="/">
+                <a class="side-nav-menu-link media align-items-center" href="{% url 'company' %}">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-dashboard"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Dashboard</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Company Dashboard</span>
                 </a>
             </li>
             <!-- End Dashboard -->
 
             <!-- Documentation -->
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="{% url 'step1' %}">
+                <a class="side-nav-menu-link media align-items-center" href="{% url 'list-interns' %}">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-check"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Application Process</span>
+                    <span class="side-nav-fadeout-on-closed media-body">List of Interns</span>
                 </a>
             </li>
             <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="{% url 'step2' %}">
+                <a class="side-nav-menu-link media align-items-center" href="{% url 'time-log' %}">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-comment"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Placement Requirements</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Time Log</span>
                 </a>
             </li>
-            <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="{% url 'step3' %}">
+            <!-- <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="">
               <span class="side-nav-menu-icon d-flex mr-3">
                 <i class="gd-envelope"></i>
               </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Placement</span>
+                    <span class="side-nav-fadeout-on-closed media-body">Feedback</span>
                 </a>
-            </li>
-            <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="{% url 'step4' %}">
-              <span class="side-nav-menu-icon d-flex mr-3">
-                <i class="gd-layout-media-overlay"></i>
-              </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Training Proper</span>
-                </a>
-            </li>
-            <li class="side-nav-menu-item">
-                <a class="side-nav-menu-link media align-items-center" href="{% url 'step5' %}">
-              <span class="side-nav-menu-icon d-flex mr-3">
-                <i class="gd-file"></i>
-              </span>
-                    <span class="side-nav-fadeout-on-closed media-body">Final Requirements</span>
-                </a>
-            </li>
+            </li> -->
             <!-- End Documentation -->
 
         </ul>

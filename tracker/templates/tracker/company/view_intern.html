@@ -1,0 +1,104 @@
+{% extends 'tracker/company/base.html' %} 
+
+{% block title %} 
+
+CIMS - List of Interns
+
+{% endblock %} 
+
+
+{% block content %} 
+
+<div class="container-fluid pb-5">
+    <div class="row justify-content-md-center">
+        <div class="card-wrapper col-12 col-md-12 mt-5">
+            <div class="brand text-center mb-3">
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Profile</h4>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                    <hr>
+                    <h1>Personal Info</h1>
+                    {% if details.profile_pic %}
+                        <img src="{{details.profile_pic.url}}" class="img-fluid rounded-circle mb-2" alt="User" style="width: 100px; height: 100px;">
+                    {% endif %}
+                    <div class="form-group">
+                        <label for="name">First Name</label>
+                        <input type="text" class="form-control" id="name" name="first_name" required="" value="{{details.first_name}}" autofocus="" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Last Name</label>
+                        <input type="text" class="form-control" id="name" name="last_name" required="" value="{{details.last_name}}" autofocus="" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Email</label>
+                        <input type="text" class="form-control" id="name" name="email" required="" value="{{details.email}}" autofocus="" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Phone</label>
+                        <input type="text" class="form-control" id="name" name="phone" required="" value="{{details.phone}}" autofocus="" placeholder="(+63)" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Address</label>
+                        <textarea class="form-control" name="adddress" id="exampleFormControlTextarea1"  rows="3" required disabled>{{details.adddress}}</textarea>
+                    </div>
+                    <hr>
+                    <h1>Student Info</h1>
+                    <div class="form-group">
+                        <label for="name">Student ID</label>
+                        <input type="text" class="form-control" id="name" name="student_id" required="" value="{{details.student_id}}"  autofocus="" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Adviser</label>
+                        <input type="text" class="form-control" id="name" name="adviser" required="" value="{{details.adviser}}" autofocus="" disabled>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="password">Redering Hours
+                            </label>
+                            <input id="password" type="number" class="form-control" min="1" name="hours" required="" value="{{details.hours}}" disabled> 
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="password">Year Level
+                            </label>
+                            <input id="password" type="number" class="form-control" min="1" max="4" name="year_level" required="" value="{{details.year_level}}" disabled>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="password-confirm">Semester
+                            </label>
+                            <input id="password-confirm" type="number" class="form-control" min="1" max="2"  name="semester" required="" value="{{details.semester}}" disabled>
+                        </div>
+                    </div>
+                    <hr>
+                    <h1>Job Info</h1>
+                    <div class="form-group">
+                        <label for="name">Position</label>
+                        <input type="text" class="form-control" id="name" name="postition" required=""  autofocus="" value="{{details.postition}}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Company Name</label>
+                        <input type="text" class="form-control" id="name" name="company_name" required="" autofocus="" value="{{details.company_name}}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Starting Date</label>
+                        <input type="text" class="form-control" id="name" name="starting_date" required="" autofocus="" value ="{{details.starting_dates}}" disabled>
+                    </div>
+                    <!-- <div class="form-group no-margin">
+                        <button type="submit" class="btn btn-secondary btn-block">
+                            Update
+                        </button>
+                    </div> -->
+                    {% if details.resume %}
+                        <a class="btn btn-secondary btn-block" target="_blank" href="{{details.resume.url}}">View Resume</a>
+                    {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

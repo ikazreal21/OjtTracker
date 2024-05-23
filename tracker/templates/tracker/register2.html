@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Title -->
+    <title>CIMS Personal Info</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'public/img/favicon.ico' %}">
+
+    <!-- Template -->
+    <link rel="stylesheet" href="{% static 'public/graindashboard/css/graindashboard.css' %}">
+  </head>
+
+  <body class="">
+
+    <main class="main">
+
+      <div class="content">
+
+			<div class="container-fluid pb-5">
+
+				<div class="row justify-content-md-center">
+					<div class="card-wrapper col-12 col-md-4 mt-5">
+						<div class="brand text-center mb-3">
+							<h2>Fill Up Personal Info</h2>
+						</div>
+
+						<div class="card">
+							<div class="card-body">
+								<h4 class="card-title">Personal Info</h4>
+								<form method="post" enctype="multipart/form-data">
+									{% csrf_token %}
+									<div style="visibility: hidden; position: absolute;">
+										{{form}}
+									</div>
+									<div class="form-group">
+										<label for="name">First Name</label>
+										<input type="text" class="form-control" id="name" name="first_name" required="" value="{{details.first_name}}" autofocus="">
+									</div>
+									<div class="form-group">
+										<label for="name">Last Name</label>
+										<input type="text" class="form-control" id="name" name="last_name" required="" value="{{details.last_name}}" autofocus="">
+									</div>
+									<div class="form-group">
+										<label for="name">Email</label>
+										<input type="text" class="form-control" id="name" name="email" required="" value="{{details.email}}" autofocus="">
+									</div>
+									<div class="form-group">
+										<label for="name">Phone</label>
+										<input type="text" class="form-control" id="name" name="phone" required="" value="" autofocus="" placeholder="(+63)">
+									</div>
+									<div class="form-group">
+										<label for="exampleFormControlTextarea1">Address</label>
+										<textarea class="form-control" name="adddress" id="exampleFormControlTextarea1"  rows="3" required></textarea>
+									</div>
+									<div class="form-group">
+										<label for="exampleFormControlFile1">Profile Picture</label>
+										<input type="file" name="profile_pic" class="form-control-file" id="exampleFormControlFile1">
+									</div>
+									<div class="form-group no-margin">
+										<button type="submit" class="btn btn-primary btn-block">
+											Next
+										</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+			</div>
+
+      </div>
+    </main>
+
+
+	<script src="{% static 'public/graindashboard/js/graindashboard.js' %}"></script>
+    <script src="{% static 'public/graindashboard/js/graindashboard.vendor.js' %}"></script>
+    
+  </body>
+</html>

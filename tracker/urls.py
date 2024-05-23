@@ -15,6 +15,23 @@ urlpatterns = [
     path("step4/", views.Step4Page, name="step4"),
     path("step5/", views.Step5Page, name="step5"),
 
+    # Profile Page
+    path("profile/", views.ProfilePage, name="profile"),
+    
+    # Company
+    path("company/", views.CompanyPage, name="company"),
+    path("company-profile/", views.CompanyProfilePage, name="company-profile"),
+    path("list-interns/", views.ListInternsPage, name="list-interns"),
+    path("view-intern/<str:pk>", views.ViewInternPage, name="view-intern"),
+    path("time-log/", views.TimeLogPage, name="time-log"),
+
+
+    # Register Page 
+    path("personal-info/", views.RegisterPage2, name="personal-info"),
+    path("student-info/", views.RegisterPage3, name="student-info"),
+    path("job-info/", views.RegisterPage4, name="job-info"),
+    path("pending/", views.PendingPage, name="pending"),
+
     # Auth
     path("register/", views.RegisterPage, name="register"),
     path("login/", views.LoginPage, name="login"),

@@ -1,0 +1,40 @@
+{% extends 'tracker/company/base.html' %} 
+
+{% block title %} 
+
+CIMS - List of Interns
+
+{% endblock %} 
+
+
+{% block content %} 
+
+<div class="container-fluid pb-5">
+    <div class="row justify-content-md-center">
+        <div class="card-wrapper col-12 col-md-12 mt-5">
+            <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th class="font-weight-semi-bold border-top-0 py-2">Student ID</th>
+                    <th class="font-weight-semi-bold border-top-0 py-2">First</th>
+                    <th class="font-weight-semi-bold border-top-0 py-2">Last</th>
+                    <th class="font-weight-semi-bold border-top-0 py-2">Job Position</th>
+                    <th class="font-weight-semi-bold border-top-0 py-2">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for intern in interns %}
+                  <tr>
+                    <td class="py-3">{{intern.student_id}}</td>
+                    <td class="py-3">{{intern.first_name | title }}</td>
+                    <td class="py-3">{{intern.last_name | title }}</td>
+                    <td class="py-3">{{intern.postition | title }}</td>
+                    <td class="py-3"><a class="btn btn-secondary btn-block" href="{% url 'view-intern' intern.id %}">View Intern</a></td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+{% endblock %} 

@@ -12,6 +12,17 @@ class CreateUserForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
 
+class ProfileForm(ModelForm):
+    class Meta:
+        model = Student
+        fields = '__all__'
+        exclude = ['step1', 'step2', 'step3', 'step4', 'step5']
+
+class CompanyForm(ModelForm):
+    class Meta:
+        model = Company
+        fields = '__all__'
+
 class Step1Form(ModelForm):
     class Meta:
         model = Step1
