@@ -208,11 +208,11 @@ def RegisterPage3(request):
         if form.is_valid():
             print(form)
             form.save(commit=False).user = request.user
-            form.save(commit=False).is_first_time = True
+            form.save(commit=False).is_first_time = False
             user = form.save()
             user.is_student = True
             user.save()
-            return redirect("job-info")
+            return redirect("landing")
     return render(request, "tracker/register3.html", context)
 
 
@@ -247,6 +247,10 @@ def RegisterPage4(request):
 @login_required(login_url="login")
 def PendingPage(request):
     return render(request, "tracker/pending.html")
+
+@login_required(login_url="login")
+def FilesPage(request):
+    return render(request, "tracker/files_to_download.html")
 
 def LoginPage(request):
     if request.method == "POST":

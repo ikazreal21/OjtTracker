@@ -14,7 +14,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{% static 'public/img/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'public/img/logo.png' %}">
 
 
     <!-- DEMO CHARTS -->
@@ -32,17 +32,21 @@
     <nav class="navbar flex-nowrap p-0">
         <div class="navbar-brand-wrapper d-flex align-items-center col-auto">
             <!-- Logo For Mobile View -->
+
             <a class="navbar-brand navbar-brand-mobile" href="/">
-                CIMS
-                <!-- <img class="img-fluid w-100" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard"> -->
+                <!-- CIMS -->
+                <img class="img-fluid w-100" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard">
             </a>
             <!-- End Logo For Mobile View -->
 
             <!-- Logo For Desktop View -->
             <a class="navbar-brand navbar-brand-desktop" href="/">
-                <h2>CIMS</h2>
-                <!-- <img class="side-nav-show-on-closed" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard" style="width: auto; height: 33px;">
-                <img class="side-nav-hide-on-closed" src="{% static 'public/img/logo.png' %}" alt="Graindashboard" style="width: auto; height: 33px;"> -->
+                <!-- <h2>CIMS</h2> -->
+                <!-- <img class="side-nav-show-on-closed" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard" style="width: auto; height: 33px;"> -->
+                <div style="display: flex;">
+                    <img class="side-nav-hide-on-closed" src="{% static 'public/img/logo.png' %}" alt="Graindashboard" style="width: auto; height: 40px;">
+                    <h2 style="margin-left: 0.5rem;">CIMS</h2>
+                </div>
             </a>
             <!-- End Logo For Desktop View -->
         </div>
@@ -66,7 +70,12 @@
                 <!-- User Avatar -->
                 <div class="dropdown mx-3 dropdown ml-2">
                     <a id="profileMenuInvoker" class="header-complex-invoker" href="#" aria-controls="profileMenu" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-target="#profileMenu" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-animation-in="fadeIn" data-unfold-animation-out="fadeOut">
+                        {% if request.user.student.profile_pic %}
+                        <img class="avatar rounded-circle mr-md-2" src="{{request.user.student.profile_pic.url}}" alt="John Doe">
+                        {% else %}
                         <img class="avatar rounded-circle mr-md-2" src="https://api.dicebear.com/7.x/pixel-art/svg?seed={{request.user}}&hair=short01,short02,short03,short04,short05" alt="John Doe">
+                        {% endif %}
+
                         <!-- <span class="mr-md-2 avatar-placeholder">J</span> -->
                         <span class="d-none d-md-block">{{request.user}}</span>
                         <i class="gd-angle-down d-none d-md-block ml-2"></i>
@@ -156,6 +165,14 @@
                 <i class="gd-file"></i>
               </span>
                     <span class="side-nav-fadeout-on-closed media-body">Final Requirements</span>
+                </a>
+            </li>
+            <li class="side-nav-menu-item">
+                <a class="side-nav-menu-link media align-items-center" href="{% url 'files' %}">
+              <span class="side-nav-menu-icon d-flex mr-3">
+                <i class="gd-files"></i>
+              </span>
+                    <span class="side-nav-fadeout-on-closed media-body">Files To Download</span>
                 </a>
             </li>
             <!-- End Documentation -->

@@ -14,6 +14,7 @@ urlpatterns = [
     path("step3/", views.Step3Page, name="step3"),
     path("step4/", views.Step4Page, name="step4"),
     path("step5/", views.Step5Page, name="step5"),
+    path("files/", views.FilesPage, name="files"),
 
     # Profile Page
     path("profile/", views.ProfilePage, name="profile"),

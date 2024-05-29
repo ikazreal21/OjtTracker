@@ -14,7 +14,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{% static 'public/img/favicon.ico' %}">
+    <link rel="shortcut icon" href="{% static 'public/img/logo.png' %}">
 
 
     <!-- DEMO CHARTS -->
@@ -39,10 +39,12 @@
             <!-- End Logo For Mobile View -->
 
             <!-- Logo For Desktop View -->
-            <a class="navbar-brand navbar-brand-desktop" href="/">
-                <h2>CIMS</h2>
-                <!-- <img class="side-nav-show-on-closed" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard" style="width: auto; height: 33px;">
-                <img class="side-nav-hide-on-closed" src="{% static 'public/img/logo.png' %}" alt="Graindashboard" style="width: auto; height: 33px;"> -->
+            <a class="navbar-brand navbar-brand-desktop" href="">
+                <!-- <img class="side-nav-show-on-closed" src="{% static 'public/img/logo-mini.png' %}" alt="Graindashboard" style="width: auto; height: 33px;"> -->
+                <div style="display: flex;">
+                    <img class="side-nav-hide-on-closed" src="{% static 'public/img/logo.png' %}" alt="Graindashboard" style="width: auto; height: 40px;">
+                    <h2 style="margin-left: 0.5rem;">CIMS</h2>
+                </div>
             </a>
             <!-- End Logo For Desktop View -->
         </div>
